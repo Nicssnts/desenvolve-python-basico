@@ -1,0 +1,24 @@
+Entrada: Ler o número n que será multiplicado por 9.
+
+Processamento:
+
+Calcular o primeiro dígito (dezena) como n - 1.
+
+Calcular o segundo dígito (unidade) como 10 - n.
+
+Obter o resultado final multiplicando o primeiro dígito por 10 e somando com o segundo dígito:
+
+𝑟𝑒𝑠𝑢𝑙𝑡𝑎𝑑𝑜=(𝑛−1)×10+(10−𝑛)
+resultado=(n−1)×10+(10−n)
+
+Saída: Mostrar o valor de resultado na tela.
+
+Assim, aplicando o algoritmo para n = 7, temos:
+
+Primeiro dígito = 7 - 1 = 6
+
+Segundo dígito = 10 - 7 = 3
+
+Resultado = 6 × 10 + 3 = 63
+
+Portanto, 9 × 7 = 63.
