@@ -1,0 +1,7 @@
+Início
+    Leia n
+    dezena ← n - 1
+    unidade ← 10 - n
+    resultado ← (dezena * 10) + unidade
+    Escreva resultado
+Fim
