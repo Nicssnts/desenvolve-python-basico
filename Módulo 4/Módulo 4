@@ -1,0 +1,93 @@
+x = int(input ("Digite um número: 8 "))
+
+if x > 5:
+    print("Maior que 5")
+
+print("Fim")
+
+n = int(input("Digite um número: "))
+cont = 0
+
+while n > cont:
+    cont = cont + 1
+    print(cont)
+
+print("Fim")
+
+n1 = float(input("Digite a primeira nota: "))
+n2 = float(input("Digite a segunda nota: "))
+n3 = float(input("Digite a terceira nota: "))
+
+m = (n1 + n2 + n3) / 3
+
+if m >= 60:
+    print("Aprovado")
+elif m >= 40:
+    print("Recuperação")
+else:
+    print("Reprovado")
+
+print("Fim")
+
+n = int(input("Digite a quantidade de números: "))
+maior = 0
+
+while n > 0:
+    x = int(input("Digite um número: "))
+
+    if x > maior:
+        maior = x
+
+    n = n - 1
+
+print("O maior número é:", maior)
+
+
+N = int(input("Digite a quantidade de respondentes: "))
+
+soma_idades = 0
+contador = 0
+
+while contador < N:
+    idade = int(input(f"Digite a idade do respondente {contador + 1}: "))
+    soma_idades += idade
+    contador += 1
+
+media = soma_idades / N
+print(f"A média das idades é: {media:.2f}")
+
+
+N = int(input ("Digite o número de experimentos: "))
+
+total_cobaias = 0
+total_coelhos = 0
+total_ratos = 0
+total_sapos = 0
+
+for i in range(N):
+    entrada = input("Digite a quantidade e o tipo: ").split()
+    quantidade = int(entrada[0])
+    tipo = entrada[1].upper()
+
+    total_cobaias += quantidade
+
+    if tipo == 'C':
+        total_coelhos += quantidade
+    elif tipo == 'R':
+        total_ratos += quantidade
+    elif tipo == 'S':
+        total_sapos += quantidade
+
+print(f"\nTotal: {total_cobaias} cobaias")
+print(f"Total de coelhos: {total_coelhos}")
+print(f"Total de ratos: {total_ratos}")
+print(f"Total de sapos: {total_sapos}")
+
+percentual_coelhos = (total_coelhos / total_cobaias) * 100
+percentual_ratos = (total_ratos / total_cobaias) * 100
+percentual_sapos = (total_sapos / total_cobaias) * 100
+
+print(f"Percentual de coelhos: {percentual_coelhos:.2f} %")
+print(f"Percentual de ratos: {percentual_ratos:.2f} %")
+print(f"Percentual de sapos: {percentual_sapos:.2f} %")
+
