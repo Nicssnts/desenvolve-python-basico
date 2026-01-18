@@ -1,0 +1,61 @@
+    
+num1 = 3.14
+num2 = 5.76
+
+resultado = round(abs(num1 - num2), 2)
+print(resultado)  
+
+import random
+import math
+
+n = int(input("Digite a quantidade de valores (n): "))
+
+valores = [random.randint(0, 100) for _ in range(n)]
+
+soma = sum(valores)
+
+raiz = math.sqrt(soma)
+
+print("Valores gerados:", valores)
+print("Soma dos valores:", soma)
+print("Raiz quadrada da soma:", raiz)
+
+import random
+
+numero_secreto = random.randint(1, 10)
+
+print(Adivinhe o número entre 1 e 10!)
+
+while True:
+    palpite = int(input(Digite seu palpite: 7))
+
+    if palpite < numero_secreto:
+        print(Muito baixo! Tente novamente.)
+    elif palpite > numero_secreto:
+        print(Muito alto! Tente novamente.)
+    else:
+        print(Parabéns! Você acertou o número!)
+        break
+
+import datetime
+
+agora = datetime.datetime.now()
+
+print(f"Data: {agora.day:02d}/{agora.month:02d}/{agora.year}")
+print(f"Hora: {agora.hour:02d}:{agora.minute:02d}")
+
+import emoji
+
+print("Emojis disponíveis:")
+print("❤️  - :red_heart:")
+print("👍  - :thumbs_up:")
+print("🤔  - :thinking_face:")
+print("🥳  - :partying_face:")
+
+frase = "Olá mundo! :red_heart:"
+
+frase_emojizada = emoji.emojize(frase, language="alias")
+
+print("\nFrase emojizada:")
+print(frase_emojizada)
+
