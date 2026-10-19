@@ -1,0 +1,31 @@
+O presente documento descreve o desenvolvimento do sistema de gerenciamento da ChronoMaster, uma empresa fictícia voltada para o ramo da relojoaria, especializada na comercialização de relógios que variam desde modelos de alta relojoaria internacional até opções casuais e acessíveis.
+O sistema foi desenvolvido em Python utilizando um único script e conta com um controle de acesso baseado em perfis de usuário:
+Gerente: Possui permissão total sobre o sistema, sendo o único capaz de gerenciar tanto o cadastro de novos usuários quanto o inventário de produtos/serviços.
+Funcionário (Vendedor): Possui acesso restrito à gestão de produtos (estoque, preços e consultas), auxiliando na rotina de vendas.
+Cliente: Possui acesso exclusivo de leitura (vitrine virtual), permitindo visualizar o catálogo ordenado e buscar modelos específicos.
+Os principais produtos comercializados pela empresa e geridos pelo sistema englobam relógios de marcas renomadas (como Rolex, Omega, Seiko e Casio), cujos registros armazenam código de identificação, nome do modelo, marca, preço unitário e quantidade em estoque.
+2. Implementação
+A solução foi desenvolvida inteiramente em Python, concentrada em um único script (main.py), fazendo uso de estruturas condicionais, laços de repetição, funções com documentação/comentários, manipulação de strings, dicionários e listas, além da persistência em arquivos de texto no formato CSV.
+A. Elemento: Usuários
+Estrutura de dados escolhida: Foi utilizada uma Lista de Dicionários (list contendo dict). Essa estrutura permite carregar todos os usuários para a memória RAM, facilitando a manipulação e a verificação de credenciais através de chaves textuais (como u['login'], u['senha'] e u['perfil']).
+Estrutura do arquivo de registro: Os dados dos usuários são armazenados em um arquivo separado chamado usuarios.csv. Ele utiliza o formato padrão de valores separados por vírgula, contendo um cabeçalho na primeira linha (login,senha,perfil) seguido pelas linhas de registros correspondentes.
+Lista de funcionalidades (CRUD):
+C (Create): criar_usuario() — Permite adicionar um novo usuário informando login, senha e perfil de acesso.
+R (Read): listar_usuarios() — Exibe na tela todos os usuários cadastrados no sistema e seus respectivos perfis.
+U (Update): atualizar_usuario() — Permite alterar a senha ou o perfil de um usuário já existente buscando pelo seu login.
+D (Delete): deletar_usuario() — Remove um usuário específico da base de dados com base no login informado.
+B. Elemento: Produtos (Relógios)
+Estrutura de dados escolhida: Assim como os usuários, os produtos são gerenciados em memória através de uma Lista de Dicionários, o que torna muito eficiente a aplicação de funções de ordenação e busca por atributos específicos (codigo, nome, marca, preco, quantidade).
+Estrutura do arquivo de registro: Os relógios são salvos no arquivo produtos.csv. O arquivo possui o cabeçalho codigo,nome,marca,preco,quantidade e armazena cada relógio em uma linha subsequente.
+Lista de funcionalidades (CRUD e Requisitos Específicos):
+C (Create): criar_produto() — Cadastra um novo relógio no estoque informando código, nome, marca, preço e quantidade.
+R (Read - Listar/Buscar):
+listar_produtos(ordem='nome') — Imprime os registros ordenados alfabeticamente por nome.
+listar_produtos(ordem='preco') — Imprime os registros ordenados do menor para o maior preço.
+buscar_produto() — Funcionalidade de busca específica que permite localizar relógios por código ou parte do nome.
+U (Update): atualizar_produto() — Atualiza o preço ou a quantidade em estoque de um relógio localizado pelo código.
+D (Delete): deletar_produto() — Remove um modelo do catálogo de produtos do sistema.
+O desenvolvimento do sistema ChronoMaster permitiu consolidar de forma prática conceitos fundamentais da programação em Python, unindo a lógica de manipulação de dados em memória com a persistência real em arquivos físicos (.csv).
+Dificuldades encontradas: Um dos principais desafios iniciais foi garantir que as alterações feitas durante a execução do programa fossem gravadas de forma correta e segura nos arquivos de texto apenas no momento do encerramento, evitando corromper a estrutura das colunas e a organização dos dados.
+Escolhas bem-sucedidas: A adoção de listas de dicionários simplificou enormemente a implementação das exigências de ordenação por nome e preço utilizando funções nativas do Python como o sorted() combinado com funções lambda. Além disso, a divisão do sistema em menus baseados em perfis garantiu um fluxo de navegação limpo e intuitivo.
+O que faria diferente: Em uma evolução futura do projeto, seria ideal implementar blocos de tratamento de exceções (try/except) para evitar que o programa sofra falhas caso o usuário digite letras em campos que exigem valores numéricos (como preço ou quantidade).
